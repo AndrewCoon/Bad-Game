@@ -1,7 +1,7 @@
 extends KinematicBody
 
 var speed = 10
-var gravity = 9.81
+var gravity = 9.81 * 2
 var jump = 7
 
 var cameraAccel = 50
