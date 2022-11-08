@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Images/Orange_circle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/file-location-dot-red-svg-wikipedia-0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Grey_thumb.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/607b471676581da175ada89c_Arrow.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/MapOutline.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Minimap.gd" type="Script" id=6]
+
+[node name="Minimap" type="MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 142.0
+margin_bottom = 142.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+script = ExtResource( 6 )
+
+[node name="Frame" type="NinePatchRect" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 133.0
+margin_bottom = 133.0
+texture = ExtResource( 5 )
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 133.0
+margin_bottom = 133.0
+custom_constants/margin_right = 6
+custom_constants/margin_top = 6
+custom_constants/margin_left = 6
+custom_constants/margin_bottom = 6
+
+[node name="Background" type="TextureRect" parent="MarginContainer"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 122.0
+margin_bottom = 122.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="PlayerIcon" type="Sprite" parent="MarginContainer/Background"]
+position = Vector2( 59, 60 )
+rotation = 0.307178
+scale = Vector2( 0.025, 0.025 )
+texture = ExtResource( 4 )
+
+[node name="EnemyIcon" type="Sprite" parent="MarginContainer/Background"]
+visible = false
+position = Vector2( 58, 44 )
+scale = Vector2( 0.013, 0.013 )
+texture = ExtResource( 2 )
+
+[node name="AlertIcon" type="Sprite" parent="MarginContainer/Background"]
+visible = false
+position = Vector2( 59, 32 )
+scale = Vector2( 0.005, 0.005 )
+texture = ExtResource( 1 )

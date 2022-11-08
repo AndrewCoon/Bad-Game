@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Minimap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnemieTest.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="floor" type="KinematicBody" parent="."]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="floor"]
+mesh = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.62106, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Minimap" parent="CanvasLayer" instance=ExtResource( 2 )]
+player = NodePath("../../Player")
+
+[node name="Enemie" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28197, 3.90889, 0 )
