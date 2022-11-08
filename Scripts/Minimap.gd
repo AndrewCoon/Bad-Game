@@ -1,3 +1,13 @@
+# Need to figure out how to find the position of a kinematicbody
+# Why does it not just have a position property
+# IDK 
+# GODOT IS BAD
+#
+#
+#
+#
+#
+
 extends MarginContainer
 
 export (NodePath) var player
